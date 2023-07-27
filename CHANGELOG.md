@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 No unreleased changes
 
+## 1.0.2 - 2023-07-27
+
+### Removed
+
+* Removed Laravel dependencies.
+
 ## 1.0.1 - 2023-07-27
 
 ### Added
