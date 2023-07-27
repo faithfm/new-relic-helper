@@ -47,7 +47,9 @@ class NewRelicHelper
     {
         // Try to get APP_NAME from Laravel config
         try {
-            return config("app.name");
+            if (function_exists('config')) {
+                return config("app.name");
+            }
         } catch (\Exception $e) {
             // ignore
         }
