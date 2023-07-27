@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 No unreleased changes
 
+## 1.0.1 - 2023-07-27
+
+### Added
+
+* Allow detection of APP_NAME for non-Laravel entry points
+
 ## 1.0.0 - 2023-07-27
 
 FIRST PUBLISHED

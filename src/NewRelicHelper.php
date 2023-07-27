@@ -32,7 +32,38 @@ class NewRelicHelper
     {
         // Ensure PHP agent is available  (ie: to avoid breaking the local env)
         if (extension_loaded('newrelic')) {
-            newrelic_set_appname(config("app.name"));
+            $appName = self::getAppName();
+            if ($appName)
+                newrelic_set_appname($appName);
         }
+    }
+
+    /**
+     * Get APP_NAME from Laravel config or from .env file
+     *
+     * return string
+     */
+    protected static function getAppName(): ?string
+    {
+        // Try to get APP_NAME from Laravel config
+        try {
+            return config("app.name");
+        } catch (\Exception $e) {
+            // ignore
+        }
+
+        // We have a number of non-Laravel entry points... in this case load APP_NAME directly from .env file
+        if (class_exists('Dotenv\Dotenv')) {
+            // search in current directory, parent, and grandparent folders
+            $dotenvSearchPaths = ['.', '..', '../..'];
+            foreach ($dotenvSearchPaths as $path) {
+                $dotenv = \Dotenv\Dotenv::createImmutable($path);
+                if ($dotenv->safeLoad()) {
+                    return $_ENV['APP_NAME'];
+                }
+            }
+        }
+
+        return null;
     }
 }
