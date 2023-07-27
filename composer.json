@@ -1,0 +1,38 @@
+{
+    "name": "faithfm/new-relic-helper",
+    "description": "New Relic helper package for Faith FM Laravel Projects",
+    "type": "library",
+    "homepage": "https://github.com/faithfm/new-relic-helper",
+    "keywords": [
+        "template",
+        "composer",
+        "package"
+    ],
+    "license": "GPL-3.0-or-later",
+    "authors": [{
+        "name": "Michael Engelbrecht",
+        "email": "michaelndani@gmail.com"
+    },
+    {
+        "name": "Lidia Ordonez",
+        "email": "lidiaordonez18@gmail.com"
+    }
+],
+"require": {
+    "php": "^7.0|^8.0",
+    "illuminate/support": "^8.0|^9.0|^10.0",
+    "laravel/framework": "^8.0|^9.0|^10.0"
+},
+"autoload": {
+        "psr-4": {
+            "FaithFM\\NewRelicHelper\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FaithFM\\NewRelicHelper\\NewRelicHelperServiceProvider"
+            ]
+        }
+    }
+}
