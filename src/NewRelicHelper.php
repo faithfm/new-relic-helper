@@ -34,7 +34,7 @@ class NewRelicHelper
         if (extension_loaded('newrelic')) {
             $appName = self::getAppName();
             if ($appName)
-                newrelic_set_appname($appName);
+                newrelic_set_appname("PHP-H $appName");
         }
     }
 

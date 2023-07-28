@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 No unreleased changes
 
+## 1.0.4 - 2023-07-28
+
+### Modified
+
+* Add "PHP-H ..." prefix to app names configured through the helper
+
 ## 1.0.3 - 2023-07-27
 
 ### Added
